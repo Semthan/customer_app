@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Switch, Route} from 'react-router-dom'
+import CustomerCreatePage from './components/CustomerCreatePage';
 import CustomerDetailPage from './components/CustomerDetailPage';
 import CustomerListPage from './pages/CustomerListPage';
 import LoginPage from './pages/LoginPage';
@@ -27,12 +28,17 @@ function App() {
           <LoginPage/>
         </Route>
 
-        <Route path="/customer-list">
-          <CustomerListPage/>
+        <Route path="/customers/create">
+          <CustomerCreatePage/>
         </Route>
 
         <Route path="/customers/:id" component={CustomerDetailPage}>
         </Route>
+
+        <Route path="/customers">
+          <CustomerListPage/>
+        </Route>
+
       </Switch>
 
       <hr/>
