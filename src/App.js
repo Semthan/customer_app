@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import {Switch, Route, Link} from 'react-router-dom'
 import CustomerCreatePage from './pages/CustomerCreatePage';
 import CustomerDetailPage from './pages/CustomerDetailPage';
-import CustomerListPage from './pages/CustomerListPage';
 import CustomerUpdatePage from './pages/CustomerUpdatePage';
+import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 
 function App() {
@@ -25,17 +25,9 @@ function App() {
   return (
     <div>
 
-      <ul>
-        <li>
-          <Link to="/customers">Customers</Link>
-        </li>
-        <li>
-          <Link to="/customers/create">Create Customer</Link>
-        </li>
-      </ul>
       <Switch>
-        <Route path="/login">
-          <LoginPage/>
+        <Route path="/home">
+          <HomePage/>
         </Route>
 
         <Route path="/customers/create">
@@ -49,10 +41,9 @@ function App() {
         <Route path="/customers/:id" component={CustomerDetailPage}>
         </Route>
 
-        <Route path="/customers">
-          <CustomerListPage/>
+        <Route path="/">
+          <LoginPage/>
         </Route>
-
       </Switch>
 
       <hr/>
