@@ -35,7 +35,7 @@ export default function LoginPage() {
         console.log(data);
         console.log(data.token);
         localStorage.setItem("WEBB20", data.token);
-        history.push("/customer-list")
+        history.push("/customers")
       });
   }
 
