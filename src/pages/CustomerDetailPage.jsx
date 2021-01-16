@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useHistory, Link } from "react-router-dom";
 
 export default function CustomerDetailPage(props) {
   const customerId = props.match.params.id;
   const [customerItem, setCustomerItem] = useState(null);
+  const history = useHistory()
 
   function getCustomerItem() {
     const url = `https://frebi.willandskill.eu/api/v1/customers/${customerId}/`;
@@ -26,7 +28,8 @@ export default function CustomerDetailPage(props) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-    });
+    })
+    .then(() => history.push("/customers"))
   }
 
   useEffect(() => {
@@ -49,6 +52,7 @@ export default function CustomerDetailPage(props) {
           <a href={`mailto:${customerItem.email}`}>{customerItem.email}</a>
           <p>{customerItem.phoneNumber}</p>
           <button onClick={deleteCustomer}>Delete Customer</button>
+          <button><Link to={`/customers/${customerId}/edit`}>Edit Customer</Link></button>
         </div>
         
       ) : (
