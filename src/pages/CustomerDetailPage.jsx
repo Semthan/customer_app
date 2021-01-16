@@ -7,7 +7,7 @@ export default function CustomerDetailPage(props) {
   const history = useHistory()
 
   function getCustomerItem() {
-    const url = `https://frebi.willandskill.eu/api/v1/customers/${customerId}/`;
+    const url = `https://frebi.willandskill.eu/api/v1/customers/${customerId}/`
     const token = localStorage.getItem("WEBB20");
     fetch(url, {
       headers: {
@@ -16,7 +16,7 @@ export default function CustomerDetailPage(props) {
       },
     })
       .then((res) => res.json())
-      .then((data) => setCustomerItem(data));
+      .then(data => setCustomerItem(data));
   }
 
   function deleteCustomer() {

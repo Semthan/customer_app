@@ -16,8 +16,8 @@ export default function CustomerUpdatePage(props) {
         Authorization: `Bearer ${token}`,
       },
     })
-      .then((res) => res.json())
-      .then(() => history.push(`/customers/${customerId}`))
+    .then(res => res.json())
+    .then(data => setFormData(data))  
   }
 
   useEffect(() => {
@@ -40,7 +40,9 @@ export default function CustomerUpdatePage(props) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-    });
+    })
+    .then((res) => res.json())
+    .then(() => history.push(`/customers/${customerId}`))
   }
 
   function renderInput(name, label, type) {
