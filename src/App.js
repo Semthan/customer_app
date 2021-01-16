@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Switch, Route, Link} from 'react-router-dom'
-import CustomerCreatePage from './components/CustomerCreatePage';
-import CustomerDetailPage from './components/CustomerDetailPage';
+import CustomerCreatePage from './pages/CustomerCreatePage';
+import CustomerDetailPage from './pages/CustomerDetailPage';
 import CustomerListPage from './pages/CustomerListPage';
 import LoginPage from './pages/LoginPage';
 
