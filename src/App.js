@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Link} from 'react-router-dom'
 import CustomerCreatePage from './components/CustomerCreatePage';
 import CustomerDetailPage from './components/CustomerDetailPage';
 import CustomerListPage from './pages/CustomerListPage';
@@ -23,6 +23,15 @@ function App() {
 
   return (
     <div>
+
+      <ul>
+        <li>
+          <Link to="/customers">Customers</Link>
+        </li>
+        <li>
+          <Link to="/customers/create">Create Customer</Link>
+        </li>
+      </ul>
       <Switch>
         <Route path="/login">
           <LoginPage/>
