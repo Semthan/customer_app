@@ -21,10 +21,6 @@ export default function CustomerCreatePage() {
 
   function handleOnSubmit(e) {
     e.preventDefault();
-  }
-
-  function handleOnSubmit(e) {
-    e.preventDefault();
     const url = "https://frebi.willandskill.eu/api/v1/customers/"
     const token = localStorage.getItem("WEBB20");
     fetch(url, {
@@ -37,7 +33,7 @@ export default function CustomerCreatePage() {
     })
     .then( res => res.json())
     .then( data => {
-        history.push("/customers")
+        history.push("/home")
     })
   }
 
