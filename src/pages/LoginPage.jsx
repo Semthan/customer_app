@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Button } from "../style/ButtonStyled";
+import { Button, LogInButton } from "../style/ButtonStyled";
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({
@@ -72,7 +72,7 @@ export default function LoginPage() {
           />
         </div>
         <div class="mt-3">
-          <Button type="submit">Log In</Button>
+          <LogInButton type="submit">Log In</LogInButton>
         </div>
       </form>
       </div>

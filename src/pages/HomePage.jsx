@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Link} from 'react-router-dom'
 import CustomerListItem from "../components/CustomerListItem";
 import UserData from "../components/UserData";
+import {Button} from "../style/ButtonStyled";
 
 export default function HomePage() {
 
@@ -26,11 +27,13 @@ export default function HomePage() {
 
   return (
     <div>
+      <h1>Customer List</h1>
+      <hr/>
       {customerList.map(item => {
         return <CustomerListItem key={item.id} customerData={item}/>
       })}
 
-      <button><Link to="/customers/create">Create New Customer</Link></button>
+      <Button><Link to="/customers/create">Create New Customer</Link></Button>
       <UserData/>
     </div>
   );

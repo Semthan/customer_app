@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
+import { Button } from "../style/ButtonStyled";
 
 export default function CustomerDetailPage(props) {
   const customerId = props.match.params.id;
@@ -42,17 +43,19 @@ export default function CustomerDetailPage(props) {
       {customerItem ? (
         <div>
           <h1>{customerItem.name}</h1>
-          <p>{customerItem.organisationNr}</p>
-          <p>{customerItem.vatNr}</p>
-          <p>{customerItem.reference}</p>
-          <p>{customerItem.paymentTerm}</p>
+          <p>organisationNr: {customerItem.organisationNr}</p>
+          <p>vatNr: {customerItem.vatNr}</p>
+          <p>reference: {customerItem.reference}</p>
+          <p>paymentTerm: {customerItem.paymentTerm}</p>
           <a href={customerItem.website} target="_blank">
             {customerItem.website}
           </a>
+          <br/>
           <a href={`mailto:${customerItem.email}`}>{customerItem.email}</a>
-          <p>{customerItem.phoneNumber}</p>
-          <button onClick={deleteCustomer}>Delete Customer</button>
-          <button><Link to={`/customers/${customerId}/edit`}>Edit Customer</Link></button>
+          <p>phoneNumber: {customerItem.phoneNumber}</p>
+          <Button><Link onClick={deleteCustomer}>Delete Customer</Link></Button>
+          <Button><Link to={`/customers/${customerId}/edit`}>Edit Customer</Link></Button>
+          <Button><Link to="/home">Back</Link></Button>
         </div>
         
       ) : (
