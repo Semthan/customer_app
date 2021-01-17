@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {Link} from 'react-router-dom'
 import CustomerListItem from "../components/CustomerListItem";
 
 export default function HomePage() {
@@ -27,6 +28,8 @@ export default function HomePage() {
       {customerList.map(item => {
         return <CustomerListItem key={item.id} customerData={item}/>
       })}
+
+      <button><Link to="/customers/create">Add Customer</Link></button>
     </div>
   );
 }
