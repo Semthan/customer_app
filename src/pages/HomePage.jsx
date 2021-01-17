@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Link} from 'react-router-dom'
 import CustomerListItem from "../components/CustomerListItem";
+import UserData from "../components/UserData";
 
 export default function HomePage() {
 
@@ -29,7 +30,8 @@ export default function HomePage() {
         return <CustomerListItem key={item.id} customerData={item}/>
       })}
 
-      <button><Link to="/customers/create">Add Customer</Link></button>
+      <button><Link to="/customers/create">Create New Customer</Link></button>
+      <UserData/>
     </div>
   );
 }
